@@ -56,4 +56,34 @@ public partial class _Default : Page
         con.Close();
         ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Successfully Deleted');", true);
     }
+
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+        SqlCommand comm = new SqlCommand("Select * from tb_customer where CustomerIC = '" + int.Parse(TextBox1.Text) + "'", con);
+        SqlDataAdapter sd = new SqlDataAdapter(comm);
+        DataTable dt = new DataTable();
+        sd.Fill(dt);
+        GridView1.DataSource = dt;
+        GridView1.DataBind();
+    }
+
+    protected void Button5_Click(object sender, EventArgs e)
+    {
+        LoadRecord();
+    }
+
+    protected void Button6_Click(object sender, EventArgs e)
+    {
+        con.Open();
+        SqlCommand comm = new SqlCommand("Select * from tb_customer where CustomerIC = '" + int.Parse(TextBox1.Text) + "'", con);
+        SqlDataReader reader = comm.ExecuteReader();
+        while (reader.Read())
+        {
+            TextBox2.Text = reader.GetString(1);
+            DropDownList1.SelectedValue = reader.GetValue(2).ToString();
+            TextBox6.Text = reader.GetInt32(3).ToString(); 
+            TextBox5.Text = reader.GetString(4);
+            TextBox7.Text = reader.GetString(5);
+        }
+    }
 }

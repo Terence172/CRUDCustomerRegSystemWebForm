@@ -2,6 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
+        <br />
+        <br />
+
         <div style ="font-size:x-large" align ="center">
             Customer Registration System
         </div>
@@ -11,7 +14,8 @@
             <tr>
                 <td style="width: 195px">&nbsp;</td>
                 <td>Customer IC</td>
-                <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>&nbsp;<asp:Button ID="Button6" runat="server" BackColor="#000099" Font-Bold="True" Font-Size="Medium" ForeColor="White" OnClick="Button6_Click" Text="GET" />
+                </td>
             </tr>
             <tr>
                 <td style="width: 195px">&nbsp;</td>
@@ -54,7 +58,10 @@
                 <td>
                     <asp:Button ID="Button1" runat="server" BackColor="#3333CC" Font-Bold="True" Font-Size="Medium" ForeColor="White" OnClick="Button1_Click" Text="Insert" />
                 &nbsp;<asp:Button ID="Button2" runat="server" BackColor="#FF9900" Font-Bold="True" Font-Size="Medium" ForeColor="White" OnClick="Button2_Click" Text="Update" />
-                &nbsp;<asp:Button ID="Button3" runat="server" BackColor="#CC0000" Font-Bold="True" Font-Size="Medium" ForeColor="White" OnClick="Button3_Click" Text="Delete" />
+                &nbsp;<asp:Button ID="Button3" runat="server" BackColor="#CC0000" Font-Bold="True" Font-Size="Medium" ForeColor="White" OnClick="Button3_Click" OnClientClick="return confirm('Confirm Deletion')" Text="Delete" />
+                &nbsp;<asp:Button ID="Button4" runat="server" BackColor="#006600" Font-Bold="True" Font-Size="Medium" ForeColor="White" OnClick="Button4_Click" Text="Search" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="Button5" runat="server" BackColor="#669999" Font-Bold="True" Font-Size="Medium" ForeColor="White" OnClick="Button5_Click" Text="Refresh" />
                 </td>
             </tr>
             <tr>
